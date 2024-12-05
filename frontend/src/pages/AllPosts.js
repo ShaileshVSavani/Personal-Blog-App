@@ -7,7 +7,7 @@ function AllPosts() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/posts') // Use full URL for API call
+    axios.get('https://personal-blog-app-o5tx.onrender.com/api/posts') // Use full URL for API call
       .then(response => setPosts(response.data))
       .catch(error => console.error('Error fetching posts:', error));
   }, []);

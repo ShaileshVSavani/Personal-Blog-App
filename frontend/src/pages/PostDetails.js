@@ -17,7 +17,8 @@ function PostDetails() {
       setLoading(true);
       setError(null);
       try {
-        const response = await axios.get(`http://localhost:5000/api/posts/${id}`);
+        // const response = await axios.get(`http://localhost:5000/api/posts/${id}`);
+        const response = await axios.get(`https://personal-blog-app-o5tx.onrender.com/api/posts/${id}`);
         setPost(response.data);
       } catch (error) {
         setError('Error fetching post');
@@ -34,8 +35,9 @@ function PostDetails() {
     const confirmDelete = window.confirm("Are you sure you want to delete this post?");
     if (confirmDelete) {
       try {
-        await axios.delete(`http://localhost:5000/api/posts/${id}`);
-        navigate('/'); // Navigate to home or a different page after deletion
+        // await axios.delete(`http://localhost:5000/api/posts/${id}`);
+        await axios.delete(`https://personal-blog-app-o5tx.onrender.com/api/posts/${id}`);
+        navigate('/allPosts'); // Navigate to home or a different page after deletion
       } catch (error) {
         console.error('Error deleting post:', error);
         setError('Error deleting post');
@@ -88,7 +90,8 @@ function PostDetails() {
               onSubmit={async (e) => {
                 e.preventDefault();
                 try {
-                  await axios.put(`http://localhost:5000/api/posts/${id}`, {
+                  // await axios.put(`http://localhost:5000/api/posts/${id}`, {
+                  await axios.put(`https://personal-blog-app-o5tx.onrender.com/api/posts/${id}`, {
                     title: e.target.title.value,
                     content: e.target.content.value,
                   });

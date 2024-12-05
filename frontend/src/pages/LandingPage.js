@@ -7,7 +7,8 @@ function LandingPage() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/posts') // Replace with your API URL
+    // axios.get('http://localhost:5000/api/posts') // Replace with your API URL
+    axios.get('https://personal-blog-app-o5tx.onrender.com/api/posts') // Replace with your API URL
       .then(response => setPosts(response.data))
       .catch(error => console.error('Error fetching posts:', error));
   }, []);
