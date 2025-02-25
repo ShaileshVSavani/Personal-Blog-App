@@ -8,7 +8,8 @@ function LandingPage() {
 
   useEffect(() => {
     // axios.get('http://localhost:5000/api/posts') // Replace with your API URL
-    axios.get('https://personal-blog-app-o5tx.onrender.com/api/posts') // Replace with your API URL
+    // axios.get('https://personal-blog-app-o5tx.onrender.com/api/posts') // Replace with your API URL
+    axios.get('https://personal-blog-app-1-zjbb.onrender.com/api/posts') // Replace with your API URL
       .then(response => setPosts(response.data))
       .catch(error => console.error('Error fetching posts:', error));
   }, []);
@@ -33,7 +34,7 @@ function LandingPage() {
             {posts.slice(0, 6).map(post => (
               <div key={post._id} className="bg-white shadow-xl rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                 <img
-                  src={post.imageUrl || 'https://via.placeholder.com/400x200'}
+                  src={post.imageUrl || 'https://placehold.co/400x200'}
                   alt={post.title}
                   className="w-full h-56 sm:h-64 object-cover"
                 />

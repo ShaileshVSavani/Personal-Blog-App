@@ -18,7 +18,8 @@ function PostDetails() {
       setError(null);
       try {
         // const response = await axios.get(`http://localhost:5000/api/posts/${id}`);
-        const response = await axios.get(`https://personal-blog-app-o5tx.onrender.com/api/posts/${id}`);
+        // const response = await axios.get(`https://personal-blog-app-o5tx.onrender.com/api/posts/${id}`);
+        const response = await axios.get(`https://personal-blog-app-1-zjbb.onrender.com/api/posts/${id}`);
         setPost(response.data);
       } catch (error) {
         setError('Error fetching post');

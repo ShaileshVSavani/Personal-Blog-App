@@ -7,7 +7,8 @@ function AllPosts() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    axios.get('https://personal-blog-app-o5tx.onrender.com/api/posts') // Use full URL for API call
+    // axios.get('https://personal-blog-app-o5tx.onrender.com/api/posts') // Use full URL for API call
+    axios.get('https://personal-blog-app-1-zjbb.onrender.com/api/posts') // Use full URL for API call
       .then(response => setPosts(response.data))
       .catch(error => console.error('Error fetching posts:', error));
   }, []);
@@ -22,7 +23,7 @@ function AllPosts() {
             {posts.map(post => (
               <div key={post._id} className="bg-white shadow-lg rounded-lg overflow-hidden">
                 <img
-                  src="https://via.placeholder.com/400x200" 
+                  src="https://placehold.co/400x200" 
                   alt="Post Thumbnail"
                   className="w-full h-48 object-cover"
                 />
